@@ -16,10 +16,10 @@ use Doctrine\Common\Cache\Cache;
 
 class Provider implements AuthenticationProviderInterface
 {
-    private $userProvider;
-    private $encoder;
-    private $nonceCache;
-    private $lifetime;
+    protected $userProvider;
+    protected $encoder;
+    protected $nonceCache;
+    protected $lifetime;
 
     /**
      * Constructor.

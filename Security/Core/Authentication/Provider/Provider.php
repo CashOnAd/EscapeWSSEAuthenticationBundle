@@ -61,16 +61,16 @@ class Provider implements AuthenticationProviderInterface
     protected function validateDigest($user, $digest, $nonce, $created, $secret)
     {
         //check whether timestamp is not in the future
-        if(strtotime($created) > time())
-        {
-            throw new CredentialsExpiredException('Future token detected.');
-        }
+        // if(strtotime($created) > time())
+        // {
+        //     throw new CredentialsExpiredException('Future token detected.');
+        // }
 
-        //expire timestamp after specified lifetime
-        if(time() - strtotime($created) > $this->lifetime)
-        {
-            throw new CredentialsExpiredException('Token has expired.');
-        }
+        // //expire timestamp after specified lifetime
+        // if(time() - strtotime($created) > $this->lifetime)
+        // {
+        //     throw new CredentialsExpiredException('Token has expired.');
+        // }
 
         //validate that nonce is unique within specified lifetime
         //if it is not, this could be a replay attack
